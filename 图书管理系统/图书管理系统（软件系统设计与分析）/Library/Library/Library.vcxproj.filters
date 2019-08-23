@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="头文件\header">
+      <UniqueIdentifier>{44a2fbd5-dea2-4df8-9561-f7a4a2c748cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\FileFuncHeader">
+      <UniqueIdentifier>{f963c877-b6ea-457b-ab18-0137588d0d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServiceHeader">
+      <UniqueIdentifier>{6ca43d1b-14c7-4fd2-87f6-1b063b1dbb6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImService">
+      <UniqueIdentifier>{16fa00e2-60e8-48b2-9340-95be23febffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImServlet">
+      <UniqueIdentifier>{2d3defd2-748b-43d7-b760-ae876123a184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServiceHeader\AdminService">
+      <UniqueIdentifier>{93d7d2f3-8b4f-4555-9413-b2af77213e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServiceHeader\ReaderService">
+      <UniqueIdentifier>{b595c815-7cb7-4d51-9cd4-f49ab9ad76b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServiceHeader\LoginService">
+      <UniqueIdentifier>{005c10bb-4a18-4bd9-a937-5e31d1efe238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\StructHeader">
+      <UniqueIdentifier>{25849774-f9bf-4584-9ba1-e20752a3bafb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImFileFunc">
+      <UniqueIdentifier>{0c1de428-88be-461d-a50c-7d559aa53b6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImService\ImAdminService">
+      <UniqueIdentifier>{65011def-58e9-4b60-ac7e-2f67ac84d56b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImService\ReaderService">
+      <UniqueIdentifier>{400b7e34-8319-4ec0-8188-719bcd7dfe6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\资源文件\batFiles">
+      <UniqueIdentifier>{8fe90561-a6e3-46d7-9dad-d5fab6acaba6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImStruct">
+      <UniqueIdentifier>{020c5a09-cb8b-48e6-a07e-e2d149bc7e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImServlet\ImAdminServlet">
+      <UniqueIdentifier>{c847de03-4073-478b-bfd4-b185198fc467}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServletHeader">
+      <UniqueIdentifier>{0da0bd9b-3089-4dff-87bb-6003b06baa8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServletHeader\AdminServlet">
+      <UniqueIdentifier>{1b4d7e09-1adb-4471-9ac4-90614af048d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServletHeader\LoginServlet">
+      <UniqueIdentifier>{eb421211-3aff-4ae5-82af-7666dd57a234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServletHeader\ReaderServlet">
+      <UniqueIdentifier>{332a83d9-cc0f-45ed-b868-5682cc1f09ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImServlet\ImLoginServlet">
+      <UniqueIdentifier>{ceb72d82-7abb-4ba5-8bb0-693b363c6222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImServlet\ImReaderServlet">
+      <UniqueIdentifier>{c440b983-f4e9-4936-946d-abc7b3a7a8ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImService\ImLoginService">
+      <UniqueIdentifier>{aeed6434-f685-4ed8-9e71-cb0ce625e56b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\header\ServletHeader\UnsignedReaderServlet">
+      <UniqueIdentifier>{24654bac-bf63-430d-9d76-f45bb884e57f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ImServlet\ImUnsignedReaderServlet">
+      <UniqueIdentifier>{1a3b19d1-5683-44e2-a5bf-fab3214144ac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BookFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BorrowRecordFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BorrowHistoryFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="ReaderFunc.h">
+      <Filter>头文件\header\FileFuncHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BookManageService.h">
+      <Filter>头文件\header\ServiceHeader\AdminService</Filter>
+    </ClInclude>
+    <ClInclude Include="showInfo.h">
+      <Filter>头文件\header\ServiceHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginService.h">
+      <Filter>头文件\header\ServiceHeader\LoginService</Filter>
+    </ClInclude>
+    <ClInclude Include="Structs.h">
+      <Filter>头文件\header\StructHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="Operation.h">
+      <Filter>头文件\header\StructHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BorrowRecordManageService.h">
+      <Filter>头文件\header\ServiceHeader\AdminService</Filter>
+    </ClInclude>
+    <ClInclude Include="ReaderManageService.h">
+      <Filter>头文件\header\ServiceHeader\AdminService</Filter>
+    </ClInclude>
+    <ClInclude Include="BookOperationService.h">
+      <Filter>头文件\header\ServiceHeader\ReaderService</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordOperationService.h">
+      <Filter>头文件\header\ServiceHeader\ReaderService</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorManageServlet.h">
+      <Filter>头文件\header\ServletHeader\AdminServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorManageService.h">
+      <Filter>头文件\header\ServiceHeader\AdminService</Filter>
+    </ClInclude>
+    <ClInclude Include="ReaderManageServlet.h">
+      <Filter>头文件\header\ServletHeader\AdminServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginServlet.h">
+      <Filter>头文件\header\ServletHeader\LoginServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="BookOperationServlet.h">
+      <Filter>头文件\header\ServletHeader\ReaderServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordOperationServlet.h">
+      <Filter>头文件\header\ServletHeader\ReaderServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryBookServlet.h">
+      <Filter>头文件\header\ServletHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BorrowRecordManageServlet.h">
+      <Filter>头文件\header\ServletHeader\AdminServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="DealFault.h">
+      <Filter>头文件\header\ServiceHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="UnsignedReaderServlet.h">
+      <Filter>头文件\header\ServletHeader\UnsignedReaderServlet</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryBookService.h">
+      <Filter>头文件\header\ServiceHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BookManageServlet.h">
+      <Filter>头文件\header\ServletHeader\AdminServlet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Library.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImAdminFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImAuthorFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImReaderFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImTypeFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBorrowRecordFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBookFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBorrowHistoryFunc.cpp">
+      <Filter>源文件\ImFileFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="ImStructs.cpp">
+      <Filter>源文件\ImStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="ImOperation.cpp">
+      <Filter>源文件\ImStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="ImAuthorManage.cpp">
+      <Filter>源文件\ImService\ImAdminService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBookManageService.cpp">
+      <Filter>源文件\ImService\ImAdminService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImReaderManageService.cpp">
+      <Filter>源文件\ImService\ImAdminService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImLoginService.cpp">
+      <Filter>源文件\ImService\ImLoginService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBookOperationService.cpp">
+      <Filter>源文件\ImService\ReaderService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImRecordOperationService.cpp">
+      <Filter>源文件\ImService\ReaderService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImQueryBookService.cpp">
+      <Filter>源文件\ImService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImShowInfo.cpp">
+      <Filter>源文件\ImService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImAuthorManageServlet.cpp">
+      <Filter>源文件\ImServlet\ImAdminServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBookManageServlet.cpp">
+      <Filter>源文件\ImServlet\ImAdminServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImReaderManageServlet.cpp">
+      <Filter>源文件\ImServlet\ImAdminServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImLoginServlet.cpp">
+      <Filter>源文件\ImServlet\ImLoginServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBookOperationServlet.cpp">
+      <Filter>源文件\ImServlet\ImReaderServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImRecordOperationServlet.cpp">
+      <Filter>源文件\ImServlet\ImReaderServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImQueryBookServlet.cpp">
+      <Filter>源文件\ImServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBorrowRecordManageService.cpp">
+      <Filter>源文件\ImService\ImAdminService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImBorrowRecordManageServlet.cpp">
+      <Filter>源文件\ImServlet\ImAdminServlet</Filter>
+    </ClCompile>
+    <ClCompile Include="ImDealFault.cpp">
+      <Filter>源文件\ImService</Filter>
+    </ClCompile>
+    <ClCompile Include="ImUnsignedReaderServlet.cpp">
+      <Filter>源文件\ImServlet\ImUnsignedReaderServlet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="book.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+    <None Include="admin.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+    <None Include="author.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+    <None Include="borrowHistory.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+    <None Include="reader.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+    <None Include="type.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+    <None Include="borrowRecord.bat">
+      <Filter>源文件\资源文件\batFiles</Filter>
+    </None>
+  </ItemGroup>
+</Project>

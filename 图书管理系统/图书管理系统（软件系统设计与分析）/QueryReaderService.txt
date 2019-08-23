@@ -1,0 +1,57 @@
+void QueryReaderService() {
+	while (1)
+	{
+		string key;//代表查找的条件
+		string name;
+		cout << endl << "请输入您查找的条件" << endl << "1 id" << endl << "2 姓名" << endl << "3 性别" << endl << "4 显示所有读者信息" << endl << "其他为退出查询 " << endl;
+		getline(cin, key);
+		if (key == "1")//根据id查找读者
+		{
+			cout << endl << "请输入您要查找的读者的id" << endl;
+			int id;//临时存储要查找的读者的id
+			id = GetIntFromCin();
+
+			while (id <= 0)//id必须输入int型且大于0，否则报错并要求重新输入
+			{
+				cout << endl << "输入有误，请重新输入！" << endl;
+				id = GetIntFromCin();
+			}
+			QueryReaderById(id);
+		}
+		else if (key == "2")//根据姓名查找读者
+		{
+			cout << endl << "请输入您要查找的读者的姓名" << endl;
+			string name;//临时存储要查找的读者的姓名
+			getline(cin, name);
+			while (name.length() == 0)
+			{
+				cout << "你想用回车来卡我伟大的容错吗？naive！重输！" << endl;
+				getline(cin, name);
+			}
+			QueryReaderByName(name);
+		}
+		else if (key == "3")//根据性别查找读者
+		{
+			cout << endl << "请输入该读者的性别,1表示男性，0表示女性" << endl;
+			int tempSex;//临时存储该读者的性别;
+			tempSex = GetIntFromCin();
+			while (tempSex != 0 && tempSex != 1)//性别必须为整形，不能输入除了一和零之外的值
+			{
+				cout << endl << "输入不合法！不能输入除了1和0之外的字符,请重新输入" << endl;
+				tempSex = GetIntFromCin();
+			}
+			QueryReaderBySex(tempSex);
+		}
+		else if (key == "4")//显示所有读者信息
+		{
+			QueryAllReader();
+		}
+		else
+		{
+			cout << endl << "查询已结束！" << endl;
+			return
+				;
+		}
+	}
+
+}

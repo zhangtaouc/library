@@ -1,0 +1,10 @@
+﻿  文件测试程序.cpp
+c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(17): error C2228: “.ISBN”的左边必须有类/结构/联合
+  c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(17): note: 类型是“Book *”
+  c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(17): note: 是否改用“->”?
+c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(18): error C2228: “.bookName”的左边必须有类/结构/联合
+  c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(18): note: 类型是“Book *”
+  c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(18): note: 是否改用“->”?
+c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(19): error C2228: “.author”的左边必须有类/结构/联合
+  c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(19): note: 类型是“Book *”
+  c:\users\lenovo\documents\图书管理系统\文件测试程序\文件测试程序\文件测试程序.cpp(19): note: 是否改用“->”?

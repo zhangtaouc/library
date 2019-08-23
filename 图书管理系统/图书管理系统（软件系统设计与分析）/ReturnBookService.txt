@@ -1,0 +1,145 @@
+void ReturnBookService(int readerId)
+{
+	int choose = 1;
+	listBorrowRecord borRecordList = getRecordsByReaderId(readerId);
+	listBorrowRecorditerator i;
+	string str2;
+	while (choose)
+	{
+
+		cout  endl;
+		cout  输入0退出还书功能 输入1进行还书操作  endl;
+		cout  请输入您的选择  endl;
+
+		choose = GetIntFromCin();
+		if (choose == -1)
+		{
+			cout  endl;
+			cout  您只能输入0或1，请重新输入  endl;
+			choose = 1;
+			continue;
+		}
+		bool hasDeleted = false;
+		int choose2 = 1;
+		string bookOnlyId;
+		char bookOId[17];
+		int choice = 1;
+		switch (choose)
+		{
+		case 0return;
+		case 1
+			if (0)borRecordList.size() == 0
+			{
+				cout  endl;
+				cout  endl  您没有要还的书籍！  endl;
+				return;
+			}
+
+			通过输入书籍的唯一id来还书
+			cout  endl;
+			cout  endl  请输入要还书籍的唯一id号,输入0返回还书主界面：;
+			while (1)
+			{
+				choice = 1;
+				getline(cin, bookOnlyId);
+				if (bookOnlyId == 0) {
+					break;
+				}
+				if (bookOnlyId.size() != 12) {
+					cout  endl  您输入的id格式不符合，请重新输入，或者输入0返回主界面;
+					continue;
+				}
+				strcpy_s(bookOId, bookOnlyId.c_str());
+				for (int k = 0; k  12; k++) {
+					if (bookOId[k]'0'  bookOId[k]'9') {
+						cout  endl  您输入的id格式不符合，请重新输入，或者输入0返回主界面：;
+						choice = 0;
+						continue;
+					}
+				}
+				if (!choice)
+					continue;
+				break;
+			}
+			if (bookOnlyId == 0)
+				break;
+			cout  endl  请重新确认书籍的唯一id  bookOnlyId  endl;
+			while (1) {
+				cout  endl  确认还书请输入1，否则请输入0：  endl;
+				choose2 = GetIntFromCin();
+				if (choose2 != 0 && choose2 != 1)
+				{
+					cout  endl;
+					cout  您只能输入0或者1，请重新输入  endl;
+					continue;
+				}
+				break;
+			}
+			if (choose2 == 0) {
+				cout  endl;
+				cout  您已成功取消还书操作  endl;
+				choose2 = 1;
+				continue;
+			}
+			如果不想还书，重新回到函数开头
+			否则继续下面的还书操作
+
+			还书的逻辑：查找到相应的借书记录后，删除这条借书记录
+			如果这本书是逾期归还，那么还需要对这个读者追加罚款
+			然后生成一条借书历史
+			并且还需要将这个书籍的馆藏数量加一
+			cout  bookOnlyId  bookOnlyId  endl;
+			for (i = borRecordList.begin(); i != borRecordList.end(); i++)
+			{
+				if (bookOnlyId._Equal(i-bookOnlyId))
+				{
+					time_t now = time(NULL);
+					listReader rList = getReaderById(i-readerId);
+					listReaderiterator j;
+					if (now  i-rationalTime)
+					{
+						cout  endl;
+						cout  endl  该书已超期，您将有罚金！  endl;
+						j = rList.begin();
+						j-fine += (now - i-rationalTime)  (24  3600);
+					}
+
+					生成借书历史
+					BorrowHistory b;
+					b.bookId = i-bookId;
+					b.readerId = i-readerId;
+					b.borrowTime = i-startTime;
+					b.returnTime = now;
+					addHistory(b);
+
+					删除借阅记录
+					deleteRecord(i-id);
+
+					增加书籍数量
+					listBook book = getBookById(i-bookId);
+					listBookiterator bo = book.begin();
+					(bo).numberInLib++;
+					modifyBook(bo);
+
+					hasDeleted = true;
+					break;
+				}
+			}
+			bookOnlyId.clear();
+			if (!hasDeleted)
+			{
+				cout  endl;
+				cout  endl  借阅记录中没有对应ID的书籍！,操作失败  endl;
+			}
+			else
+				cout  endl  还书成功！  endl;
+
+			break;
+
+		defaultcout  endl  请正确输入选择！  endl;
+			break;
+		}
+
+	}
+
+}

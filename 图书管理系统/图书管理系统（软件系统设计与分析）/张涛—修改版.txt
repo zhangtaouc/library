@@ -1,0 +1,220 @@
+void QueryBorrowRecordService() {
+	int choose;
+	choose = 1;
+	while (choose)
+	{
+		cout << endl;
+		cout << "请输入：" << endl;
+		cout << "0:返回主界面" << endl;
+		cout << "1:根据书籍id查询借阅记录" << endl;
+		cout << "2:根据读者id查询借阅记录" << endl;
+		choose = GetIntFromCin();
+		switch (choose)
+		{
+		case 0:
+			return;
+		case 1:
+			int bookId;
+			bookId = 1;
+			while (bookId)
+			{
+				int bookId;
+				cout << endl;
+				cout << "请输入书籍id号 输入0返回借阅记录查询主界面" << endl;
+				bookId = GetIntFromCin();
+				if (bookId == 0)
+				{
+					break;
+				}
+				if (bookId == -1) {
+					cout << "输入不合要求" << endl;
+					continue;
+				}
+
+				list<Book> bookList = getBookById(bookId);
+				if (bookList.size() == 0)
+				{
+					cout << endl;
+					cout << "不存在该书籍id!" << endl;
+					continue;
+				}
+				list<BorrowRecord> borrowRecord = getRecordByBookId(bookId);
+				if (borrowRecord.size() == 0)
+				{
+					cout << endl;
+					cout << "该书籍当前没有被借阅" << endl;
+					continue;
+				}
+				showBorRecordInfo(borrowRecord, true);
+			}
+			break;
+		case 2:
+			int readerId;
+			readerId = 1;
+			while (readerId)
+			{
+				cout << endl;
+				cout << "请输入读者id号，输入0返回借阅记录查询主界面" << endl;
+				readerId = GetIntFromCin();
+				if (readerId == 0)
+				{
+					break;
+				}
+				if (readerId == -1) {
+					cout << "输入不合要求" << endl;
+					continue;
+				}
+
+				list<Reader> readerList = getReaderById(readerId);
+				if (readerList.size() == 0)
+				{
+					cout << endl;
+					cout << "不存在该读者！" << endl;
+					continue;
+				}
+				list<BorrowRecord> borrowRecord = getRecordsByReaderId(readerId);
+				if (borrowRecord.size() == 0)
+				{
+					cout << endl;
+					cout << "该读者当前没有借阅书籍" << endl;
+					continue;
+				}
+				showBorRecordInfo(borrowRecord, true);
+			}
+			break;
+		default:
+			cout << endl;
+			cout << "请正确输入选项！" << endl;
+			break;
+		}
+	}
+
+}
+
+
+
+
+void QueryAuthorService() {
+
+	int choose;
+	choose = 1;
+	while (choose)
+	{
+		cout << endl;
+		cout << "请输入：" << endl;
+		cout << "0:返回主界面 " << endl;
+		cout << "1:按照id查找作者" << endl;
+		cout << "2:按照作者名查询作者" << endl;
+		choose = GetIntFromCin();//输入choose
+		switch (choose)
+		{
+			int choose2;
+		case 0:
+			return;
+		case 1:
+			choose2 = 1;
+			while (choose2)
+			{
+				cout << endl;
+				cout << "请输入作者id号(从1开始的整数） 输入0返回作者操作主界面" << endl;
+				choose2 = GetIntFromCin();
+				if (choose2 == -1) {
+					cout << "输入不合要求" << endl;
+					continue;
+				}
+
+				if (choose2 == 0)
+				{
+					break;
+				}
+				list<Author> authorList = getAuthorById(choose2);
+				if (authorList.size() == 0)
+				{
+					cout << "不存在该作者id" << endl;
+				}
+				else
+					showAuthorInfo(authorList, true);
+			}
+			break;
+		case 2:
+			choose2 = 1;
+			while (choose2)
+			{
+				string authorName;
+				string key;//用于选择是否退按作者名查找
+				cout << endl << "您是否要退出查找？ 输入0返回作者操作主界面，其他键继续查找" << endl;
+				getline(cin, key);
+				if (key == "0")
+					break;
+				//输入作者名
+				cout << endl << "请输入作者名" << endl;
+				getline(cin, authorName);
+				list<Author> authorList = getAuthorByName(authorName);
+				if (authorList.size() == 0)
+				{
+					cout << endl;
+					cout << "不存在该姓名的读者" << endl;
+					continue;
+				}
+				showAuthorInfo(authorList, 1);
+			}
+			break;
+		default:
+			cout << endl;
+			cout << "请正确输入选项！" << endl;
+			break;
+		}
+	}
+
+}
+
+
+void QueryBooksByAuthorService()
+{
+	int choose;
+	choose = 1;
+	while (choose)
+	{
+		cout << endl;
+		cout << "请输入：" << endl;
+		cout << "0返回主界面" << endl;
+		cout << "1根据作者id查询书籍" << endl;
+		choose = GetIntFromCin();
+		switch (choose)
+		{
+		case 0:return;
+		case 1:
+			int authorId;
+			authorId = 1;
+			while (authorId)
+			{
+				cout << endl;
+				cout << "请输入作者id 输入0返回作者查询操作主界面" << endl;
+				authorId = GetIntFromCin();
+				if (authorId == 0)
+				{
+					break;
+				}
+				if (authorId == -1) {
+					cout << "输入不合要求" << endl;
+					continue;
+				}
+
+				list<Book> bookList = getBooksByAuthor(authorId);
+				if (bookList.size() == 0)
+				{
+					cout << endl;
+					cout << "不存在该作者id！" << endl;
+					continue;
+				}
+				showBooksInfo(bookList);
+			}
+			break;
+		default:
+			cout << endl;
+			cout << "请正确输入选项！" << endl;
+			continue;
+		}
+	}
+}
+

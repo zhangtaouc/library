@@ -1,0 +1,116 @@
+list<Admin> getAdminById(int id) //根据id号查找管理员
+{
+	list<Admin> adminList;//建立list表
+	fstream fs;
+	fs.open("admin.bat", ios::out|ios::in | ios::binary|ios::ate);//打开文件，其中in代表输入，out代表输出，ate表示让文件指针指向最后
+	if (!fs)//如果文件不存在，输出error
+	{
+		cout << "error" << endl;
+	}
+	else
+	{
+		long pos = sizeof(Admin)*(id - 1);//通过id号计算指针偏移量
+		if (pos<0 || pos>fs.tellg())  cout << "error" << endl;//如果偏移量小于零或者大于文件长度，输出error,返回空list
+		else 
+		{
+			fs.seekg(pos, ios::beg);//指针跳转到文件头
+			char * buffer = new char[sizeof(Admin)];//定义adamin长度的buffer变量
+			fs.read(buffer, sizeof(Admin));//读文件
+			Admin adminById = *((Admin*)buffer);//将buffer强制转换为admin类型，并赋值给adminById
+			if (adminById.exist == 1)//如果未被删除，将记录添加到List末尾
+			{
+				adminList.push_back(adminById);
+			}
+		}
+	}
+	fs.close();
+	return adminList;
+}
+list<Author> getAuthorById(int id) //根据id号查找作者
+{
+	list<Author> authorList;//建立list表
+	fstream fs;
+	fs.open("author.bat", ios::out | ios::in | ios::binary | ios::ate);//打开文件，其中in代表输入，out代表输出，ate表示让文件指针指向最后
+	if (!fs)//如果文件不存在，输出error
+	{
+		cout << "error" << endl;
+	}
+	else
+	{
+		long pos = sizeof(Author)*(id - 1);//通过id号计算指针偏移量
+		if (pos<0 || pos>fs.tellg())  cout << "error" << endl;//如果偏移量小于零或者大于文件长度，输出error,返回空list
+		else
+		{
+			fs.seekg(pos, ios::beg);//指针跳转到文件头
+			char * buffer = new char[sizeof(Author)];//定义author长度的buffer变量
+			fs.read(buffer, sizeof(Author));//读文件
+			Author authorById = *((Author*)buffer);//将buffer强制转换为author类型，并赋值给authorbyid
+			authorList.push_back(authorById);//将记录添加到List末尾
+		}
+	}
+	fs.close();
+	return authorList;
+}
+list<Author> getAuthorByName(string name) //根据姓名模糊查询作者
+{
+	list<Author> authorList;//建立list表
+	fstream fs;
+	Author a;
+	string s="";//定义字符串用于存放姓名
+	fs.open("author.bat",  ios::binary | ios::in);//以读的方式打开文件
+	if (!fs)//如果文件不存在，输出error
+	{
+		cout << "error" << endl;
+	}
+	else
+	{
+		fs.seekg(0, ios::end);
+		long len = fs.tellg();//获取文件长度
+		fs.seekg(0, ios::beg);//指针指向文件头
+		char*buffer = new char[sizeof(Author)];//定义author长度的buffer变量
+		while (fs.tellg < len)//当文件没结束时，遍历文件
+		{
+			fs.read(buffer, sizeof(Author));//读文件
+			a = *((Author*)buffer);//强制转换
+			s = a.name;
+			if (s.find(name) != string::npos)//进行模糊查询
+			{
+				authorList.push_back(a);
+			}
+		}
+	}
+	fs.close();
+	return authorList;
+}
+list<Book> getBookByISBN(string ISBN)//根据ISBN查找书
+{
+	list<Book> bookList;//建立list表
+	fstream fs;
+	Book b;
+	string s = "";//定义字符串用于存放ISBN
+	fs.open("book.bat",  ios::binary | ios::in);//以读的方式打开文件
+	if (!fs)//如果文件不存在，输出error
+	{
+		cout << "error" << endl;
+	}
+	else
+	{
+		fs.seekg(0, ios::end);
+		long len = fs.tellg();//获取文件长度
+		fs.seekg(0, ios::beg);//指针指向文件头
+		char*buffer = new char[sizeof(Book)];//定义book长度的buffer变量
+		while (fs.tellg < len)//当文件没结束时，遍历文件
+		{
+			fs.read(buffer, sizeof(Book));//读文件
+			b = *((Book*)buffer);//强制转换
+			if (b.exist == 0)continue;//如果书被假删除了，跳过这条记录，读取下一条记录
+			s = b.ISBN;
+			if (s==ISBN)//进行查询
+			{
+				bookList.push_back(b);
+			}
+		}
+	}
+	fs.close();
+	return bookList;
+}
